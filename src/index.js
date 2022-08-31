@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route, Router } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import Navigation from './components/Navigation';
+import NotFound from './pages/error/NotFound';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,6 +13,7 @@ root.render(
 		<Navigation />
 		<Routes>
 			<Route path='/' element={<App />}></Route>
+			<Route path='*' element={<NotFound />}></Route>
 		</Routes>
 	</BrowserRouter>
 );
