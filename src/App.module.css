@@ -9,11 +9,16 @@
 .section {
 	width: 100%;
 	height: 300px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+.sectionMargin {
+	margin-top: 2rem;
 }
 .sectionContentContainer {
 	overflow-x: scroll;
 	overflow-y: hidden;
 	width: 100%;
-	height: 250px;
-	background-color: red;
+	height: auto;
 }

@@ -13,7 +13,7 @@ function App() {
 					<Image
 						src='#'
 						style={{
-							backgroundColor: 'salmon',
+							backgroundColor: 'gray	',
 							width: '100vw',
 							height: '12rem',
 						}}
@@ -22,19 +22,17 @@ function App() {
 				<main
 					className={`${Class.mainContainer} d-flex flex-column align-items-start `}
 				>
-					<section className={`${Class.section}  `}>
+					<section className={`${Class.section} `}>
 						<h1>Your favourite topics</h1>
 						<div className={`${Class.sectionContentContainer} `}>
-							<BlogList />
+							<BlogList type='cover' />
 						</div>
 					</section>
-					<section className={`${Class.section}  `}>
-						<h1>Your favourite topics</h1>
-						<div className={`${Class.sectionContentContainer} `}></div>
-					</section>
-					<section className={`${Class.section}  `}>
-						<h1>Your favourite topics</h1>
-						<div className={`${Class.sectionContentContainer} `}></div>
+					<section className={`${Class.section} ${Class.sectionMargin} `}>
+						<h1>Recent blogs</h1>
+						<div className={`${Class.sectionContentContainer} `}>
+							<BlogList type='list' />
+						</div>
 					</section>
 				</main>
 			</Container>

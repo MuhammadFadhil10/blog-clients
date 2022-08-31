@@ -4,8 +4,34 @@
 
 .blogCover {
 	width: 200px;
-	height: 100%;
-	background-color: blue;
+	height: 250px;
+	background-color: gray;
 	border-radius: 20px;
 	margin-right: 1rem;
+}
+
+.recentBlogContainer {
+	width: 100%;
+	height: auto;
+	padding: 0;
+	flex-wrap: wrap;
+}
+
+.recentBlogCard img {
+	height: 50%;
+	width: 100%;
+	background-color: gray;
+}
+.recentBlogCard {
+	width: 48%;
+	height: 300px;
+	margin-bottom: 1rem;
+	background: none;
+	overflow-y: hidden;
+	border: 1px solid #8d8d8d;
+}
+
+.recentBlogCardBody {
+	height: 50%;
+	overflow-wrap: break-word;
 }
