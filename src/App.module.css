@@ -1,0 +1,18 @@
+.App-link {
+	color: #61dafb;
+}
+/* me */
+.mainContainer {
+	width: auto;
+	margin-top: 1rem;
+}
+.section {
+	min-width: 100%;
+	max-width: auto;
+	height: 300px;
+}
+.sectionContentContainer {
+	width: auto;
+	height: 200px;
+	background-color: red;
+}
