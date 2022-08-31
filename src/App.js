@@ -2,6 +2,8 @@ import Class from './App.module.css';
 import { Container, Image } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import BlogList from './components/BlogList';
+
 function App() {
 	document.title = 'Read my blog!';
 	return (
@@ -22,7 +24,9 @@ function App() {
 				>
 					<section className={`${Class.section}  `}>
 						<h1>Your favourite topics</h1>
-						<div className={`${Class.sectionContentContainer} `}></div>
+						<div className={`${Class.sectionContentContainer} `}>
+							<BlogList />
+						</div>
 					</section>
 					<section className={`${Class.section}  `}>
 						<h1>Your favourite topics</h1>

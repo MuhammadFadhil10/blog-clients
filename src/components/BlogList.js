@@ -5,7 +5,14 @@ import Class from './BlogList.module.css';
 const BlogList = () => {
 	return (
 		<>
-			<Container>
+			<Container className={`${Class.container} d-flex`}>
+				<Image className={`${Class.blogCover}`} src='#'></Image>
+				<Image className={`${Class.blogCover}`} src='#'></Image>
+				<Image className={`${Class.blogCover}`} src='#'></Image>
+				<Image className={`${Class.blogCover}`} src='#'></Image>
+				<Image className={`${Class.blogCover}`} src='#'></Image>
+				<Image className={`${Class.blogCover}`} src='#'></Image>
+				<Image className={`${Class.blogCover}`} src='#'></Image>
 				<Image className={`${Class.blogCover}`} src='#'></Image>
 			</Container>
 		</>
