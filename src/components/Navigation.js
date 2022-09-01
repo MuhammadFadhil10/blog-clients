@@ -1,13 +1,14 @@
 import { Navbar, Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Navigation = () => {
+	const navigate = useNavigate();
 	return (
 		<>
 			<Navbar bg='dark' variant='dark'>
 				<Container>
-					<Navbar.Brand href='#home'>
+					<Navbar.Brand href='#home' onClick={() => navigate('/')}>
 						<img
 							alt=''
 							src=''
