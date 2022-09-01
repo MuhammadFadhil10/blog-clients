@@ -7,16 +7,34 @@ const GlobalForm = ({ type }) => {
 	return (
 		<>
 			<Container>
-				<h1>{type === 'register' ? 'Create account' : 'Login'}</h1>
+				<h1>{type === 'register' && 'Create account'}</h1>
+				<h1>{type === 'login' && 'Login'}</h1>
+
 				<Form className={`${Style.form} d-flex flex-column align-items-start`}>
-					<Form.Group className={`${Style.formGroup} `}>
-						<Form.Label>Email</Form.Label>
-						<Form.Control
-							className={`${Style.formInput} `}
-							type='email'
-							autoComplete='off'
-						></Form.Control>
-					</Form.Group>
+					{type === 'register' ||
+						(type === 'login' && (
+							<>
+								<Form.Group className={`${Style.formGroup} `}>
+									<Form.Label>Email</Form.Label>
+									<Form.Control
+										className={`${Style.formInput} `}
+										type='email'
+										autoComplete='off'
+									></Form.Control>
+								</Form.Group>
+								<Form.Group className={`${Style.formGroup} `}>
+									<Form.Label>Password</Form.Label>
+									<Form.Control
+										className={`${Style.formInput} `}
+										type='password'
+										autoComplete='off'
+									></Form.Control>
+								</Form.Group>
+								<Button type='button' variant='dark'>
+									Login
+								</Button>
+							</>
+						))}
 					{type === 'register' && (
 						<>
 							<Form.Group className={`${Style.formGroup} `}>
@@ -37,14 +55,7 @@ const GlobalForm = ({ type }) => {
 							</Form.Group>
 						</>
 					)}
-					<Form.Group className={`${Style.formGroup} `}>
-						<Form.Label>Password</Form.Label>
-						<Form.Control
-							className={`${Style.formInput} `}
-							type='password'
-							autoComplete='off'
-						></Form.Control>
-					</Form.Group>
+
 					{type === 'register' && (
 						<>
 							<Form.Group className={`${Style.formGroup} `}>
@@ -55,11 +66,28 @@ const GlobalForm = ({ type }) => {
 									autoComplete='off'
 								></Form.Control>
 							</Form.Group>
+							<Button type='button' variant='dark'>
+								register
+							</Button>
 						</>
 					)}
-					<Button type='button' variant='dark'>
-						{type === 'register' ? 'Register' : 'login'}
-					</Button>
+					{type === 'search' && (
+						<>
+							<Form.Group className={`${Style.formGroup} `}>
+								{/* <Form.Label>Search</Form.Label> */}
+								<Form.Control
+									className={`${Style.formInput} `}
+									type='text'
+									autoComplete='off'
+									placeholder='how to cook fish'
+								></Form.Control>
+							</Form.Group>
+							<Button type='button' variant='dark'>
+								Search
+							</Button>
+						</>
+					)}
+
 					{type === 'register' && (
 						<p>
 							Already have account? <Link to='/login'>Login</Link>
