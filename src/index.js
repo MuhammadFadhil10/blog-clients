@@ -6,6 +6,7 @@ import './index.css';
 import App from './App';
 import Navigation from './components/Navigation';
 import NotFound from './pages/error/NotFound';
+import Register from './pages/auth/Register';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,6 +14,7 @@ root.render(
 		<Navigation />
 		<Routes>
 			<Route path='/' element={<App />}></Route>
+			<Route path='/register' element={<Register />}></Route>
 			<Route path='*' element={<NotFound />}></Route>
 		</Routes>
 	</BrowserRouter>
