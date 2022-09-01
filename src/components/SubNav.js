@@ -3,9 +3,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { CgHome, CgSearch, CgAdd, CgFolder, CgProfile } from 'react-icons/cg';
 
 import Style from './SubNav.module.css';
-import NavPointer from './SubNavPointer';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useState } from 'react';
 
 const SubNav = () => {
+	const [activePage, setActivePage] = useState('/');
+	const navigate = useNavigate();
+
 	return (
 		<>
 			<Navbar
@@ -19,20 +23,60 @@ const SubNav = () => {
 				>
 					<span
 						className={`${Style.iconContainer}`}
-						style={{ borderTop: '3px solid #9b9bee' }}
+						style={{ borderTop: activePage === '/' && '3px solid #9b9bee' }}
+						onClick={(e) => {
+							setActivePage('/');
+							navigate('/');
+						}}
 					>
 						<CgHome color='white' size={35} />
 					</span>
-					<span className={`${Style.iconContainer}`}>
+					<span
+						className={`${Style.iconContainer}`}
+						style={{
+							borderTop: activePage === '/search' && '3px solid #9b9bee',
+						}}
+						onClick={(e) => {
+							setActivePage('/search');
+							navigate('/search');
+						}}
+					>
 						<CgSearch color='white' size={35} />
 					</span>
-					<span className={`${Style.iconContainer}`}>
+					<span
+						className={`${Style.iconContainer}`}
+						style={{
+							borderTop: activePage === '/create-blog' && '3px solid #9b9bee',
+						}}
+						onClick={(e) => {
+							setActivePage('/create-blog');
+							navigate('/create-blog');
+						}}
+					>
 						<CgAdd color='white' size={35} />
 					</span>
-					<span className={`${Style.iconContainer}`}>
+					<span
+						className={`${Style.iconContainer}`}
+						style={{
+							borderTop: activePage === '/folders' && '3px solid #9b9bee',
+						}}
+						onClick={(e) => {
+							setActivePage('/folders');
+							navigate('/folders');
+						}}
+					>
 						<CgFolder color='white' size={35} />
 					</span>
-					<span className={`${Style.iconContainer}`}>
+					<span
+						className={`${Style.iconContainer}`}
+						style={{
+							borderTop: activePage === '/profile' && '3px solid #9b9bee',
+						}}
+						onClick={(e) => {
+							setActivePage('/profile');
+							navigate('/profile');
+						}}
+					>
 						<CgProfile color='white' size={35} />
 					</span>
 				</Container>
