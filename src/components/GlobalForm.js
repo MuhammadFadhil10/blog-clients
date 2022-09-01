@@ -1,13 +1,13 @@
 import { Button, Container, Form } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Style from './Form.module.css';
+import Style from './GlobalForm.module.css';
 import { Link } from 'react-router-dom';
 
-const Form = ({ type }) => {
+const GlobalForm = ({ type }) => {
 	return (
 		<>
 			<Container>
-				<h1>Create account</h1>
+				<h1>{type === 'register' ? 'Create account' : 'Login'}</h1>
 				<Form className={`${Style.form} d-flex flex-column align-items-start`}>
 					<Form.Group className={`${Style.formGroup} `}>
 						<Form.Label>Email</Form.Label>
@@ -61,4 +61,4 @@ const Form = ({ type }) => {
 	);
 };
 
-export default Form;
+export default GlobalForm;
