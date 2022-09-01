@@ -19,19 +19,35 @@ const Register = () => {
 					</Form.Group>
 					<Form.Group className={`${Style.formGroup} `}>
 						<Form.Label>Username</Form.Label>
-						<Form.Control type='text' autoComplete='off'></Form.Control>
+						<Form.Control
+							className={`${Style.formInput} `}
+							type='text'
+							autoComplete='off'
+						></Form.Control>
 					</Form.Group>
 					<Form.Group className={`${Style.formGroup} `}>
 						<Form.Label>Name</Form.Label>
-						<Form.Control type='text' autoComplete='off'></Form.Control>
+						<Form.Control
+							className={`${Style.formInput} `}
+							type='text'
+							autoComplete='off'
+						></Form.Control>
 					</Form.Group>
 					<Form.Group className={`${Style.formGroup} `}>
 						<Form.Label>Password</Form.Label>
-						<Form.Control type='password' autoComplete='off'></Form.Control>
+						<Form.Control
+							className={`${Style.formInput} `}
+							type='password'
+							autoComplete='off'
+						></Form.Control>
 					</Form.Group>
 					<Form.Group className={`${Style.formGroup} `}>
 						<Form.Label>Confirm Password</Form.Label>
-						<Form.Control type='password' autoComplete='off'></Form.Control>
+						<Form.Control
+							className={`${Style.formInput} `}
+							type='password'
+							autoComplete='off'
+						></Form.Control>
 					</Form.Group>
 					<Button type='button' variant='dark'>
 						Register
