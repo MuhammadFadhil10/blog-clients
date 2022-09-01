@@ -8,7 +8,7 @@ import GlobalForm from '../../components/GlobalForm';
 const Register = () => {
 	return (
 		<>
-			<GlobalForm type='register' />
+			<GlobalForm type='login' />
 		</>
 	);
 };
