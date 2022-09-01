@@ -5,8 +5,21 @@
 	bottom: 0;
 	z-index: 999;
 	box-shadow: 0 0 50px 30px #0000007a;
+	padding: 0;
 }
 
-/* .subnavContainer {
+.subnavContainer {
+	height: 100%;
 	width: 100%;
-} */
+	padding: 0;
+	/* background-color: green; */
+}
+
+.iconContainer {
+	/* border-top: 3px solid #9b9bee; */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 25%;
+}
