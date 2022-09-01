@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom';
 
 import GlobalForm from '../../components/GlobalForm';
 
-const Register = () => {
+const Login = () => {
 	return (
 		<>
-			<GlobalForm type='register' />
+			<GlobalForm type='login' />
 		</>
 	);
 };
 
-export default Register;
+export default Login;
