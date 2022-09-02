@@ -14,7 +14,8 @@
 	border-left: none;
 	border-right: none;
 }
-.formInput:focus {
+.formInput:focus,
+.textArea:focus {
 	box-shadow: none;
 	border-bottom: 1px solid #5c5c5c;
 }
@@ -27,4 +28,23 @@ p {
 .formInput,
 .formGroup {
 	width: 100%;
+}
+
+.thumbnail {
+	width: 50%;
+	height: 150px;
+	/* margin: auto; */
+	background-color: gray;
+}
+
+.formFile {
+	height: 50px;
+	/* background-color: red; */
+}
+.textArea {
+	margin-top: 1rem;
+	width: 100%;
+	height: auto;
+	resize: vertical;
+	/* background-color: red; */
 }

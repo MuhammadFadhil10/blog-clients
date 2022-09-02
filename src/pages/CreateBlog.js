@@ -1,11 +1,12 @@
 import { Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import GlobalForm from '../components/GlobalForm';
 
 const CreateBlog = () => {
 	return (
 		<>
 			<Container>
-				<h1>This is Create Blog</h1>
+				<GlobalForm type='createBlog' />
 			</Container>
 		</>
 	);
