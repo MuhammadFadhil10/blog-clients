@@ -1,0 +1,25 @@
+.container {
+	width: 100%;
+	/* background-color: red; */
+	padding: 0;
+}
+
+.folder {
+	width: 150px;
+	height: 105px;
+	margin: 0 auto;
+	margin-top: 50px;
+	position: relative;
+	border-radius: 0 10px 10px 10px;
+}
+
+.folder:before {
+	content: '';
+	width: 60%;
+	height: 12px;
+	border-radius: 0 20px 0 0;
+	background-color: #212529;
+	position: absolute;
+	top: -11px;
+	left: 0px;
+}
