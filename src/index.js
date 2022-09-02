@@ -13,6 +13,7 @@ import SubNav from './components/SubNav';
 import Register from './pages/auth/Register';
 import Login from './pages/auth/Login';
 import Search from './pages/Search';
+import CreateBlog from './pages/CreateBlog';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -25,6 +26,7 @@ root.render(
 			<Route path='/register' element={<Register />}></Route>
 			<Route path='/login' element={<Login />}></Route>
 			<Route path='/search' element={<Search />}></Route>
+			<Route path='/create-blog' element={<CreateBlog />}></Route>
 			<Route path='*' element={<NotFound />}></Route>
 		</Routes>
 	</BrowserRouter>
