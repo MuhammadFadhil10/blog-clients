@@ -12,32 +12,44 @@ const GlobalForm = ({ type }) => {
 				<h1>{type === 'createBlog' && 'Create blog'}</h1>
 
 				<Form className={`${Style.form} d-flex flex-column align-items-start`}>
-					{type === 'register' ||
-						(type === 'login' && (
-							<>
-								<Form.Group className={`${Style.formGroup} `}>
-									<Form.Label>Email</Form.Label>
-									<Form.Control
-										className={`${Style.formInput} `}
-										type='email'
-										autoComplete='off'
-									></Form.Control>
-								</Form.Group>
-								<Form.Group className={`${Style.formGroup} `}>
-									<Form.Label>Password</Form.Label>
-									<Form.Control
-										className={`${Style.formInput} `}
-										type='password'
-										autoComplete='off'
-									></Form.Control>
-								</Form.Group>
-								<Button type='button' variant='dark'>
-									Login
-								</Button>
-							</>
-						))}
+					{/* LOGIN */}
+					{type === 'login' && (
+						<>
+							<Form.Group className={`${Style.formGroup} `}>
+								<Form.Label>Email</Form.Label>
+								<Form.Control
+									className={`${Style.formInput} `}
+									type='email'
+									autoComplete='off'
+								></Form.Control>
+							</Form.Group>
+							<Form.Group className={`${Style.formGroup} `}>
+								<Form.Label>Password</Form.Label>
+								<Form.Control
+									className={`${Style.formInput} `}
+									type='password'
+									autoComplete='off'
+								></Form.Control>
+							</Form.Group>
+							<Button type='button' variant='dark'>
+								Login
+							</Button>
+							<p>
+								have no account? <Link to='/register'>Register</Link>
+							</p>
+						</>
+					)}
+					{/* REGISTER */}
 					{type === 'register' && (
 						<>
+							<Form.Group className={`${Style.formGroup} `}>
+								<Form.Label>Email</Form.Label>
+								<Form.Control
+									className={`${Style.formInput} `}
+									type='email'
+									autoComplete='off'
+								></Form.Control>
+							</Form.Group>
 							<Form.Group className={`${Style.formGroup} `}>
 								<Form.Label>Username</Form.Label>
 								<Form.Control
@@ -54,11 +66,14 @@ const GlobalForm = ({ type }) => {
 									autoComplete='off'
 								></Form.Control>
 							</Form.Group>
-						</>
-					)}
-
-					{type === 'register' && (
-						<>
+							<Form.Group className={`${Style.formGroup} `}>
+								<Form.Label>Password</Form.Label>
+								<Form.Control
+									className={`${Style.formInput} `}
+									type='password'
+									autoComplete='off'
+								></Form.Control>
+							</Form.Group>
 							<Form.Group className={`${Style.formGroup} `}>
 								<Form.Label>Confirm Password</Form.Label>
 								<Form.Control
@@ -70,8 +85,12 @@ const GlobalForm = ({ type }) => {
 							<Button type='button' variant='dark'>
 								register
 							</Button>
+							<p>
+								Already have account? <Link to='/login'>Login</Link>
+							</p>
 						</>
 					)}
+					{/* SEARCH */}
 					{type === 'search' && (
 						<>
 							<Form.Group className={`${Style.formGroup} `}>
@@ -88,6 +107,7 @@ const GlobalForm = ({ type }) => {
 							</Button>
 						</>
 					)}
+					{/* CREATE BLOG */}
 					{type === 'createBlog' && (
 						<>
 							<Form.Group className={`${Style.formGroup} `}>
@@ -154,17 +174,6 @@ const GlobalForm = ({ type }) => {
 								Upload
 							</Button>
 						</>
-					)}
-
-					{type === 'register' && (
-						<p>
-							Already have account? <Link to='/login'>Login</Link>
-						</p>
-					)}
-					{type === 'login' && (
-						<p>
-							have no account? <Link to='/register'>Register</Link>
-						</p>
 					)}
 				</Form>
 			</Container>
