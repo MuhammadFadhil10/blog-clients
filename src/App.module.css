@@ -22,8 +22,13 @@ body {
 	margin-top: 2rem;
 }
 .sectionContentContainer {
+	min-height: 100vh !important;
+	margin-bottom: 100px !important;
+	clear: both;
+}
+
+.favBlogs {
 	overflow-x: scroll;
-	overflow-y: hidden;
 	width: 100%;
 	height: auto;
 }

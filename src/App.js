@@ -24,7 +24,7 @@ function App() {
 				>
 					<section className={`${Class.section} `}>
 						<h1>Your favourite topics</h1>
-						<div className={`${Class.sectionContentContainer} `}>
+						<div className={`${Class.favBlogs} `}>
 							<BlogList type='cover' />
 						</div>
 					</section>
