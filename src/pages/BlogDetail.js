@@ -27,6 +27,13 @@ const BlogDetail = () => {
 					nulla non veniam consequatur aliquam quo error. Adipisci dignissimos
 					iure enim nam unde quo a corrupti soluta veniam rem.
 				</p>
+				<div className={`${Style.authorContainer} d-flex align-items-center`}>
+					<Image src='' className={`${Style.profilePict}`}></Image>
+					<div>
+						<h1>Author's Name</h1>
+						<h5 className='text-muted'>total blogs</h5>
+					</div>
+				</div>
 			</div>
 			<div className={`${Style.blogBottom}`}>
 				<div className={`${Style.relatedBlogsContainer} d-flex flex-column`}>
