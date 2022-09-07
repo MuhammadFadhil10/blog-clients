@@ -17,10 +17,23 @@
 	flex-wrap: wrap;
 }
 
+.relatedBlogContainer {
+	width: 100%;
+	height: 100px;
+	padding: 0;
+	flex-wrap: wrap;
+}
+
 .recentBlogCard img {
 	height: 50%;
 	width: 100%;
 	background-color: gray;
+}
+.relatedBlogCard img {
+	width: 30%;
+	height: 100%;
+	background-color: gray;
+	object-fit: cover;
 }
 .recentBlogCard {
 	width: 48%;
@@ -30,8 +43,20 @@
 	overflow-y: hidden;
 	border: 1px solid #8d8d8d;
 }
+.relatedBlogCard {
+	width: 100%;
+	height: 100%;
+	margin-bottom: 1rem;
+	background: none;
+	overflow-y: hidden;
+	border: 1px solid #8d8d8d;
+}
 
 .recentBlogCardBody {
 	height: 50%;
+	overflow-wrap: break-word;
+}
+.relatedBlogCardBody {
+	width: 50%;
 	overflow-wrap: break-word;
 }

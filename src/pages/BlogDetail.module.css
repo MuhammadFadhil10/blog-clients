@@ -1,0 +1,24 @@
+.blogHeader,
+.blogBody,
+.relatedBlogsContainer {
+	border-bottom: 1px solid gray;
+	padding-bottom: 1.5rem;
+	margin-bottom: 1rem;
+}
+
+.blogThumbnail {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+	background-color: gray;
+}
+
+.relatedBlogsContainer {
+	height: 300px;
+}
+
+.commentsContainer {
+	width: 100%;
+	height: auto;
+	background-color: red;
+}
