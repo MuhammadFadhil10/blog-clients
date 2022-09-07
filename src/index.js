@@ -16,6 +16,7 @@ import Search from './pages/Search';
 import CreateBlog from './pages/CreateBlog';
 import Folders from './pages/Folders';
 import Profile from './pages/Profile';
+import BlogDetail from './pages/BlogDetail';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -31,6 +32,7 @@ root.render(
 			<Route path='/create-blog' element={<CreateBlog />}></Route>
 			<Route path='/folders' element={<Folders />}></Route>
 			<Route path='/profile' element={<Profile />}></Route>
+			<Route path='/blog/:blogId' element={<BlogDetail />}></Route>
 			<Route path='*' element={<NotFound />}></Route>
 		</Routes>
 	</BrowserRouter>
