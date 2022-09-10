@@ -31,10 +31,11 @@ p {
 }
 
 .thumbnail {
-	width: 50%;
+	width: 80%;
 	height: 150px;
 	/* margin: auto; */
 	background-color: gray;
+	object-fit: cover;
 }
 
 .formFile {
