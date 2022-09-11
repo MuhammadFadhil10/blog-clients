@@ -31,11 +31,6 @@ const CreateBlog = () => {
 		},
 		createBlogTrigger
 	);
-	useEffect(() => {
-		if (createBlogResult) {
-			console.log(createBlogResult);
-		}
-	}, [createBlogResult]);
 
 	const createBlogHandler = () => {
 		createBlogTrigger
