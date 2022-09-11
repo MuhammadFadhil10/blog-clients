@@ -1,9 +1,12 @@
 import { Container, Form, Image, FloatingLabel, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Style from './CreateBlog.module.css';
+import useFetch from '../hooks/useFetch';
 
 const CreateBlog = () => {
+	const mount = useRef();
+
 	const [titleValue, setTitleValue] = useState('');
 	const [thumbnailValue, setThumbnailValue] = useState('');
 	const [thumbnailPreview, setThumbnailPreview] = useState('');
@@ -12,27 +15,43 @@ const CreateBlog = () => {
 	const [tagArray, setTagArray] = useState([]);
 	const [saveToFolder, setSaveToFolder] = useState(false);
 	const [isAnonymous, setIsAnonymous] = useState(false);
+
+	const [createBlogTrigger, setCreateBlogTrigger] = useState(false);
+
+	const createBlogResult = useFetch(
+		'post',
+		'/api/create-blog',
+		{
+			title: titleValue,
+			thumbnail: thumbnailValue,
+			content: contentValue,
+			isAnonymous: isAnonymous,
+			tag: tagArray,
+			userId: '630b6efaf81c3d7a250fe6a7',
+		},
+		createBlogTrigger
+	);
+	useEffect(() => {
+		if (createBlogResult) {
+			console.log(createBlogResult);
+		}
+	}, [createBlogResult]);
+
 	const createBlogHandler = () => {
-		console.log(titleValue);
-		console.log(thumbnailValue);
-		console.log(contentValue);
-		console.log(tagValue);
-		console.log(saveToFolder);
-		console.log(isAnonymous);
-		console.log(tagArray);
+		createBlogTrigger
+			? setCreateBlogTrigger(false)
+			: setCreateBlogTrigger(true);
 	};
 	const TagVisualize = ({ tag }) => {
 		return (
 			<Container className={`${Style.tagVisualizeContainer} d-flex flex-wrap`}>
-				{tag
-					.sort((a, b) => a - b)
-					.map((t) => {
-						return (
-							<div className={`${Style.tagVisualize}`}>
-								<p>{t}</p>
-							</div>
-						);
-					})}
+				{tag.map((t) => {
+					return (
+						<div className={`${Style.tagVisualize}`}>
+							<p>{t}</p>
+						</div>
+					);
+				})}
 			</Container>
 		);
 	};

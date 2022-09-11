@@ -60,7 +60,9 @@ p {
 .tagVisualize {
 	display: block;
 	width: fit-content;
-	height: 40px;
+	max-width: 100%;
+	word-break: break-all;
+	min-height: 40px;
 	padding: 5px;
 	border: 1px solid #303030;
 	border-radius: 10px;
