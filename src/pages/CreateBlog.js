@@ -9,6 +9,7 @@ const CreateBlog = () => {
 	const [thumbnailPreview, setThumbnailPreview] = useState('');
 	const [contentValue, setContentValue] = useState('');
 	const [tagValue, setTagValue] = useState('');
+	const [tagArray, setTagArray] = useState([]);
 	const [saveToFolder, setSaveToFolder] = useState(false);
 	const [isAnonymous, setIsAnonymous] = useState(false);
 	const createBlogHandler = () => {
@@ -18,6 +19,22 @@ const CreateBlog = () => {
 		console.log(tagValue);
 		console.log(saveToFolder);
 		console.log(isAnonymous);
+		console.log(tagArray);
+	};
+	const TagVisualize = ({ tag }) => {
+		return (
+			<Container className={`${Style.tagVisualizeContainer} d-flex flex-wrap`}>
+				{tag
+					.sort((a, b) => a - b)
+					.map((t) => {
+						return (
+							<div className={`${Style.tagVisualize}`}>
+								<p>{t}</p>
+							</div>
+						);
+					})}
+			</Container>
+		);
 	};
 	return (
 		<>
@@ -83,11 +100,18 @@ const CreateBlog = () => {
 							name='tag'
 							value={tagValue}
 							onChange={(e) => {
-								setTagValue(e.target.value);
+								setTagValue(e.target.value === ',' ? '' : e.target.value);
+							}}
+							onKeyDown={(e) => {
+								if (e.key === ',') {
+									setTagArray((prev) => [tagValue, ...prev]);
+									setTagValue('');
+								}
 							}}
 							autoComplete='off'
 							placeholder='Sports, Health, etc...'
 						></Form.Control>
+						{tagArray.length > 0 && <TagVisualize tag={tagArray} />}
 					</Form.Group>
 					<Form.Group>
 						<Form.Label>Save to folder</Form.Label>

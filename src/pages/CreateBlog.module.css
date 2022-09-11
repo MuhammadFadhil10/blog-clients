@@ -49,3 +49,19 @@ p {
 	resize: vertical;
 	/* background-color: red; */
 }
+
+.tagVisualizeContainer {
+	margin-top: 1rem;
+	gap: 5px;
+	width: 100%;
+	height: auto;
+	/* background-color: red; */
+}
+.tagVisualize {
+	display: block;
+	width: fit-content;
+	height: 40px;
+	padding: 5px;
+	border: 1px solid #303030;
+	border-radius: 10px;
+}
