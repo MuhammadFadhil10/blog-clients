@@ -2,8 +2,10 @@ import { Container, Form } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Style from './FolderList.module.css';
+import useFetch from '../hooks/useFetch';
+import { useEffect } from 'react';
 
-const FolderList = () => {
+const FolderList = ({ folders }) => {
 	return (
 		<>
 			<Form>
@@ -21,22 +23,15 @@ const FolderList = () => {
 			<Container
 				className={`${Style.container} d-flex flex-wrap justify-content-between`}
 			>
-				<div className={`d-flex flex-column`}>
-					<div className={`${Style.folder} bg-dark`}></div>
-					<h3>folder one</h3>
-				</div>
-				<div className={`d-flex flex-column`}>
-					<div className={`${Style.folder} bg-dark`}></div>
-					<h3>folder one</h3>
-				</div>
-				<div className={`d-flex flex-column`}>
-					<div className={`${Style.folder} bg-dark`}></div>
-					<h3>folder one</h3>
-				</div>
-				<div className={`d-flex flex-column`}>
-					<div className={`${Style.folder} bg-dark`}></div>
-					<h3>folder one</h3>
-				</div>
+				{folders &&
+					folders.map((folder) => {
+						return (
+							<div className={`d-flex flex-column`}>
+								<div className={`${Style.folder} bg-dark`}></div>
+								<h3>{folder.folderName}</h3>
+							</div>
+						);
+					})}
 			</Container>
 		</>
 	);
